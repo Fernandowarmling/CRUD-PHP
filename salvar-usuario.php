@@ -37,12 +37,24 @@ switch ($_REQUEST["acao"]) {
             print "<script>alert('Edição Realizada com Sucesso')</script>";
             print "<script>location.href='?page=default'</script>";
         } else {
-            print "<script>alert('Erro ao Cadastrar Usuario')</script>";
+            print "<script>alert('Erro ao Editar Usuario')</script>";
             print "<script>location.href='?page=default'</script>";
         }
 
         break;
     case 'excluir':
-        //code
+        $sql = "DELETE FROM usuarios WHERE id=".$_REQUEST["id"];
+
+        $res = $conn->query($sql);
+        if ($res == true) {
+            print "<script>alert('Exclusão Realizada com Sucesso')</script>";
+            print "<script>location.href='?page=default'</script>";
+        } else {
+            print "<script>alert('Erro ao Excluir Usuario')</script>";
+            print "<script>location.href='?page=default'</script>";
+        }
+
         break;
+
+        
 }
