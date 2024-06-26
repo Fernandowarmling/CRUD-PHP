@@ -1,9 +1,19 @@
+<?php
+session_start();
+if(empty($_SESSION)){
+    print "<script>location.href='index.php';</script>";
+
+}
+?>
+
+
+
 <!doctype html>
 <html lang="pt-BR">
 
 <head>
     <!-- Required meta tags -->
-    <meta charset="utf-8">
+    <meta chtarset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Bootstrap CSS -->
@@ -30,6 +40,9 @@
                     <li class="nav-item">
                         <a class="nav-link" href="?page=listar">Listar Usuarios</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="btn btn-danger" href="?page=logout">Sair</a>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -51,6 +64,9 @@
                         break;
                     case "editar":
                         include("editar-usuario.php");
+                        break;
+                    case "logout":
+                        include("logout.php");
                         break;
                     default:
                         print "<h1>Bem Vindos!!</h1>";

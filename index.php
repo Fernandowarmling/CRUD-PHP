@@ -24,8 +24,8 @@
                    <form action="login.php" method="POST">
                         <div>
                             <div class="mb-3">
-                                <label>Usuario</label>
-                                <input type="text" name="nome" class="form-control">
+                                <label>E-mail</label>
+                                <input type="text" name="email" class="form-control">
                             </div>
                         </div>
                         <div>
